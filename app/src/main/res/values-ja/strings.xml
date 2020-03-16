@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ごみのひ</string>
+    <string name="action_settings">設定</string>
+    <string name="day_of_week_title">曜日ごとの設定</string>
+    <string name="day_of_week_bef_weeknum">第</string>
+    <string name="day_of_week_aft_weeknum">週</string>
+    <string name="garbage_type">ごみの種類</string>
+</resources>

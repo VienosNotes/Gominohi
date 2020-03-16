@@ -1,0 +1,2 @@
+rootProject.name='Gominohi'
+include ':app'
