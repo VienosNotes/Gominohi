@@ -11,6 +11,6 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="day_of_week_title">Day of week setting</string>
     <string name="day_of_week_bef_weeknum">Week</string>
-    <string name="day_of_week_aft_weeknum"></string>
+    <string name="day_of_week_aft_weeknum"> </string>
     <string name="garbage_type">Garbage type</string>
 </resources>

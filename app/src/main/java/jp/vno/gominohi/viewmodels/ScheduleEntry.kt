@@ -2,6 +2,7 @@ package jp.vno.gominohi.viewmodels
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import androidx.recyclerview.widget.RecyclerView
 import jp.vno.gominohi.R
 import jp.vno.gominohi.ScheduleEntryViewHolder
@@ -20,8 +21,7 @@ class DayOfWeekScheduleEntry(private val weekInMonth: Int, private val dayOfWeek
     val indexDayOfWeek = dayOfWeek.value
 }
 @Serializable
-class DateScheduleEntry(val date: Int) : ScheduleEntry {
-}
+class DateScheduleEntry(val date: Int) : ScheduleEntry
 
 class ScheduleEntryAdapter(val entries: List<ScheduleEntry>) : RecyclerView.Adapter<ScheduleEntryViewHolder>() {
 

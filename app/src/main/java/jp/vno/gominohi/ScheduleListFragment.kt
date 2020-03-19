@@ -25,8 +25,3 @@ class ScheduleListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
     }
 }
-
-class ScheduleEntryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-    val weekNum : Spinner = itemView.findViewById(R.id.weeknumSpinner);
-    val dayOfWeek: Spinner = itemView.findViewById(R.id.doySpinner);
-}

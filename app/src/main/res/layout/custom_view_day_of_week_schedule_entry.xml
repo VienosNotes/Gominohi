@@ -37,8 +37,11 @@
 
             <Spinner
                 android:id="@+id/weeknumSpinner"
-                android:layout_width="56dp"
+                
+                android:layout_width="80dp"
                 android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:foregroundTint="@color/colorForeground"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/textView4"
                 app:layout_constraintTop_toTopOf="parent" />
