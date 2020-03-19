@@ -3,4 +3,6 @@
     <color name="colorPrimary">#FF5722</color>
     <color name="colorPrimaryDark">#DD2C00</color>
     <color name="colorAccent">#81D4FA</color>
+    <color name="colorForeground">#FFFFFF</color>
+    <color name="scheduleEntryBackground">#14000000</color>
 </resources>

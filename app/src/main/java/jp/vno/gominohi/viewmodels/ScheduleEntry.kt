@@ -1,15 +1,41 @@
 package jp.vno.gominohi.viewmodels
-import android.graphics.Color
+
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
+import jp.vno.gominohi.R
+import jp.vno.gominohi.ScheduleEntryViewHolder
 import kotlinx.serialization.*
-import kotlinx.serialization.json.*
 import java.time.DayOfWeek
 
-interface Schedule
+interface ScheduleEntry
 @Serializable
-class DayOfWeekSchedule(val weekInMonth: Int, val dayOfWeek: DayOfWeek) : Schedule
+class DayOfWeekScheduleEntry(private val weekInMonth: Int, private val dayOfWeek: DayOfWeek) : ScheduleEntry {
+    companion object {
+        fun indexFromWeekNum(weekNum: Int) = weekNum - 1
+        fun indexFromDoy(doy: DayOfWeek) = doy.value
+    }
+
+    val indexWeekNum = weekInMonth - 1
+    val indexDayOfWeek = dayOfWeek.value
+}
 @Serializable
-class DateSchedule(val date: Int) : Schedule
-@Serializable
-class ScheduleEntry(val name:String, val colorCode: String) {
-    val Schedules: MutableList<Schedule> = mutableListOf()
+class DateScheduleEntry(val date: Int) : ScheduleEntry {
+}
+
+class ScheduleEntryAdapter(val entries: List<ScheduleEntry>) : RecyclerView.Adapter<ScheduleEntryViewHolder>() {
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ScheduleEntryViewHolder {
+        val inflate = LayoutInflater.from(parent.context).inflate(R.layout.custom_view_day_of_week_schedule_entry, parent, false)
+        return ScheduleEntryViewHolder(inflate)
+    }
+
+    override fun getItemCount(): Int = entries.size
+
+    override fun onBindViewHolder(holder: ScheduleEntryViewHolder, position: Int) {
+        val entry: DayOfWeekScheduleEntry = entries[position] as DayOfWeekScheduleEntry
+        holder.weekNum.setSelection(entry.indexWeekNum)
+        holder.dayOfWeek.setSelection(entry.indexDayOfWeek)
+    }
+
 }
